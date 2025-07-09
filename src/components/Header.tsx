@@ -10,7 +10,7 @@ export default function Header() {
         {/* Left Section */}
         <div className="flex items-center space-x-4">
           <Link href="/" className="font-bold text-xl">
-            facebook
+            faceWall
           </Link>
           <nav className="hidden sm:flex space-x-4 text-sm">
             <Link href="/">Home</Link>

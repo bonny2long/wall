@@ -1,4 +1,5 @@
 // src/components/Feed.tsx
+
 'use client';
 
 import { useState } from 'react';
@@ -20,13 +21,17 @@ export default function Feed() {
     if (trimmed.length > 280) return;
 
     const newMessage: Message = {
-      id: Date.now(), // unique enough for now
+      id: Date.now(),
       content: trimmed,
       timestamp: new Date().toLocaleString(),
     };
 
     setMessages([newMessage, ...messages]);
     setInput('');
+  };
+
+  const handleDelete = (id: number) => {
+    setMessages((prev) => prev.filter((msg) => msg.id !== id));
   };
 
   return (
@@ -51,13 +56,14 @@ export default function Feed() {
         </div>
       </div>
 
-      {/* Live feed */}
       {messages.map((msg) => (
         <Post
           key={msg.id}
+          id={msg.id}
           name="Bonny Makaniankhondo"
           content={msg.content}
           timestamp={msg.timestamp}
+          onDelete={handleDelete}
         />
       ))}
     </div>
