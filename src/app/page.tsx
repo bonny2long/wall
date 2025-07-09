@@ -1,28 +1,26 @@
-// src/app/page.tsx
 import Header from '@/components/Header';
 import Sidebar from '@/components/Sidebar';
 import Feed from '@/components/Feed';
+import Rightbar from '@/components/Rightbar'
 
 export default function Home() {
   return (
-    <div>
+    <div className="bg-[#e9ebee] min-h-screen">
       <Header />
-      <main className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-4 mt-4 px-4">
-  <aside className="lg:col-span-3">
-    <Sidebar />
-  </aside>
-  <section className="lg:col-span-6">
-    <Feed />
-  </section>
-  <aside className="lg:col-span-3 hidden lg:block">
-    {/* Optional: Right ad or extra section */}
-    <div className="bg-white rounded-lg p-4 shadow text-sm">
-      <h2 className="font-semibold mb-2">Sponsored</h2>
-      <p>Scuba diving vacations, etc...</p>
-    </div>
-  </aside>
-</main>
 
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-4 px-4 pt-6">
+        <aside className="lg:col-span-3 hidden lg:block">
+          <Sidebar />
+        </aside>
+
+        <section className="lg:col-span-6">
+          <Feed />
+        </section>
+
+        <aside className="lg:col-span-3 hidden lg:block">
+          <Rightbar />
+        </aside>
+      </div>
     </div>
   );
 }
