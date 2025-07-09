@@ -1,10 +1,10 @@
 // tailwind.config.ts
-import type { Config } from 'tailwindcss'
+import type { Config } from 'tailwindcss';
 
 const config: Config = {
   content: [
-    './src/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
+    './src/**/*.{js,ts,jsx,tsx}', // ✅ for App Router components
+    './components/**/*.{js,ts,jsx,tsx}', // ✅ for shadcn and custom comps
   ],
   theme: {
     extend: {},
